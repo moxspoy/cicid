@@ -14,7 +14,7 @@ it('Increment counter', async () => {
 
   expect(getByTestId('counter').props.children).toBe('1');
   expect(toJSON()).toMatchSnapshot();
-});
+}, 30000);
 
 it('Reset counter', async () => {
   const {getByTestId, getByText, queryByTestId, toJSON} = render(<App />);
@@ -26,4 +26,4 @@ it('Reset counter', async () => {
 
   expect(getByTestId('counter').props.children).toBe('0');
   expect(toJSON()).toMatchSnapshot();
-}, 30000);
+});
