@@ -6,7 +6,10 @@ jobs:
       - image: reactnativecommunity/react-native-android
     steps:
       - checkout
-      restore_cache:
+      - run:
+          name: Update NPM
+          command: "sudo npm install -g npm@5"
+      - restore_cache:
           key: dependency-cache-{{ checksum "yarn.lock" }}
       - run:
           name: Install Dependencies
