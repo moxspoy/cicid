@@ -1,0 +1,349 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Increment counter 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "backgroundColor": "#F3F3F3",
+    }
+  }
+>
+  <RCTScrollView
+    contentInsetAdjustmentBehavior="automatic"
+    style={
+      Object {
+        "backgroundColor": "#F3F3F3",
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#FFF",
+            "padding": 24,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontSize": 24,
+                "fontWeight": "600",
+              },
+              Object {
+                "color": "black",
+                "fontSize": 20,
+                "textAlign": "left",
+              },
+            ]
+          }
+        >
+          Penghitung Jumlah Pengunjung Vaksin Covid
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontSize": 24,
+                "fontWeight": "600",
+              },
+              Object {
+                "color": "black",
+                "fontSize": 16,
+                "textAlign": "left",
+              },
+            ]
+          }
+        >
+          saat ini terdapat
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 24,
+                  "fontWeight": "600",
+                },
+                Object {
+                  "color": "black",
+                  "fontSize": 16,
+                  "textAlign": "left",
+                },
+              ]
+            }
+            testID="counter"
+          >
+            1
+          </Text>
+        </Text>
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#04ba5b",
+                "borderRadius": 10,
+                "marginTop": 20,
+                "padding": 10,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 24,
+                    "fontWeight": "600",
+                  },
+                  Object {
+                    "color": "#FFF",
+                    "fontSize": 16,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              TAMBAH
+            </Text>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#04ba5b",
+                "borderRadius": 10,
+                "marginTop": 20,
+                "padding": 10,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 24,
+                    "fontWeight": "600",
+                  },
+                  Object {
+                    "color": "#FFF",
+                    "fontSize": 16,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              RESET
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</RCTSafeAreaView>
+`;
+
+exports[`Reset counter 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "backgroundColor": "#F3F3F3",
+    }
+  }
+>
+  <RCTScrollView
+    contentInsetAdjustmentBehavior="automatic"
+    style={
+      Object {
+        "backgroundColor": "#F3F3F3",
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#FFF",
+            "padding": 24,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontSize": 24,
+                "fontWeight": "600",
+              },
+              Object {
+                "color": "black",
+                "fontSize": 20,
+                "textAlign": "left",
+              },
+            ]
+          }
+        >
+          Penghitung Jumlah Pengunjung Vaksin Covid
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "fontSize": 24,
+                "fontWeight": "600",
+              },
+              Object {
+                "color": "black",
+                "fontSize": 16,
+                "textAlign": "left",
+              },
+            ]
+          }
+        >
+          saat ini terdapat
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 24,
+                  "fontWeight": "600",
+                },
+                Object {
+                  "color": "black",
+                  "fontSize": 16,
+                  "textAlign": "left",
+                },
+              ]
+            }
+            testID="counter"
+          >
+            0
+          </Text>
+        </Text>
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#04ba5b",
+                "borderRadius": 10,
+                "marginTop": 20,
+                "padding": 10,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 24,
+                    "fontWeight": "600",
+                  },
+                  Object {
+                    "color": "#FFF",
+                    "fontSize": 16,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              TAMBAH
+            </Text>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#04ba5b",
+                "borderRadius": 10,
+                "marginTop": 20,
+                "padding": 10,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "fontSize": 24,
+                    "fontWeight": "600",
+                  },
+                  Object {
+                    "color": "#FFF",
+                    "fontSize": 16,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              RESET
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</RCTSafeAreaView>
+`;
