@@ -6,21 +6,18 @@ jobs:
       - image: reactnativecommunity/react-native-android
     steps:
       - checkout
-      - run:
-          name: Update NPM
-          command: "sudo npm install -g npm@5"
-      - restore_cache:
+      restore_cache:
           key: dependency-cache-{{ checksum "yarn.lock" }}
       - run:
           name: Install Dependencies
-          command: npm install
+          command: yarn install
       - save_cache:
           key: dependency-cache-{{ checksum "yarn.lock" }}
           paths:
             - ./node_modules
       - run:
           name: Run tests
-          command: npm run test
+          command: yarn test
       - run:
           name: Assemble release build
           command: |
