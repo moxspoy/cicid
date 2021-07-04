@@ -1,9 +1,9 @@
 version: 2.1
 jobs:
-  build:
+  android:
     working_directory: ~/repo
     docker:
-      - image: circleci/node:10.16.3
+      - image: reactnativecommunity/react-native-android
     steps:
       - checkout
       - run:
@@ -24,6 +24,12 @@ jobs:
       - run:
           name: Assemble release build
           command: |
-            cd android && ./gradlew assembleRelease && cd ..
+            cd android && chmod +x gradlew && ./gradlew assembleRelease
       - store_artifacts:
           path: app/build/outputs/apk/release
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - android
