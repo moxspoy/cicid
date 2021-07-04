@@ -26,4 +26,4 @@ it('Reset counter', async () => {
 
   expect(getByTestId('counter').props.children).toBe('0');
   expect(toJSON()).toMatchSnapshot();
-});
+}, 30000);
