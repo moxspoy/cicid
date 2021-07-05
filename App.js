@@ -37,11 +37,12 @@ const App: () => Node = () => {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
             padding: 24,
+            paddingTop: 80,
           }}>
           <CustomText size={20}>
             Penghitung Jumlah Pengunjung Vaksin Covid
           </CustomText>
-          <CustomText>saat ini terdapat
+          <CustomText>{`saat ini terdapat `}
             <CustomText testID={'counter'}>
               {`${counter}`}
             </CustomText>
