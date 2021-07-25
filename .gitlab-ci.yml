@@ -77,3 +77,5 @@ code_quality_html:
     REPORT_FORMAT: html
   artifacts:
     paths: [gl-code-quality-report.html]
+    reports:
+      codequality: gl-code-quality-report.json
