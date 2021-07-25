@@ -1,0 +1,58 @@
+image: node:latest
+
+stages:
+  - pre
+  - test
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+variables:
+  DOCKER_DRIVER: overlay2
+
+
+before_script:
+  - chmod +x ./util/generate-dotenv.sh
+  - yarn generate-dotenv
+  - yarn
+
+close:issue:
+  image: registry.gitlab.com/gitlab-automation-toolkit/gitlab-auto-close-issue
+  stage: pre
+  before_script: []
+  only:
+    - master
+  script:
+    - apk add --no-cache --upgrade grep
+    - ISSUE=$(echo $CI_COMMIT_MESSAGE | grep -oP "(?<=Fixes \#)[0-9]+" || echo '1')
+    - gitlab_auto_close_issue --issue $ISSUE --remove-label "Doing" --remove-label "To Do"
+
+lint:
+  stage: test
+  only:
+    - merge_requests
+  except:
+    variables:
+      - $CI_COMMIT_REF_NAME =~ /^master/
+  script:
+    - yarn lint
+
+tests:unit:
+  stage: test
+  only:
+    - merge_requests
+  except:
+    variables:
+      - $CI_COMMIT_REF_NAME =~ /^master/
+  script:
+    - yarn test --silent
+
+tests:coverage:
+  stage: test
+  only:
+    - master
+  script:
+    - yarn test --coverage --silent
+

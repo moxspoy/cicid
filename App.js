@@ -34,18 +34,18 @@ const App: () => Node = () => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-            padding: 24,
-            paddingTop: 80,
-          }}>
+          style={[
+            {
+              backgroundColor: isDarkMode ? Colors.black : Colors.white,
+            },
+            styles.title,
+          ]}>
           <CustomText size={20}>
             Penghitung Jumlah Pengunjung Vaksin Covid
           </CustomText>
-          <CustomText>{`saat ini terdapat `}
-            <CustomText testID={'counter'}>
-              {`${counter}`}
-            </CustomText>
+          <CustomText>
+            {'saat ini terdapat '}
+            <CustomText testID={'counter'}>{`${counter}`}</CustomText>
           </CustomText>
           <Button onPress={increment} text={'TAMBAH'} />
           <Button onPress={reset} text={'RESET'} />
@@ -65,7 +65,13 @@ const Button = ({onPress, text}) => (
   </TouchableOpacity>
 );
 
-const CustomText = ({children, size = 16, color = 'black', center, ...props}) => (
+const CustomText = ({
+  children,
+  size = 16,
+  color = 'black',
+  center,
+  ...props
+}) => (
   <Text
     style={[
       styles.sectionTitle,
@@ -102,6 +108,10 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     marginTop: 20,
+  },
+  title: {
+    padding: 24,
+    paddingTop: 80,
   },
 });
 
