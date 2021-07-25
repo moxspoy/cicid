@@ -32,6 +32,17 @@ close:issue:
     - ISSUE=$(echo $CI_COMMIT_MESSAGE | grep -oP "(?<=Fixes \#)[0-9]+" || echo '1')
     - gitlab_auto_close_issue --issue $ISSUE --remove-label "Doing" --remove-label "To Do"
 
+create:merge-request:
+  image: registry.gitlab.com/gitlab-automation-toolkit/gitlab-auto-mr
+  stage: pre
+  before_script: []
+  except:
+    - production
+    - master
+    - tags
+  script:
+    - gitlab_auto_mr -t master -c WIP -d .gitlab/merge_request_templates/merge_request.md --private-token DxTz9x6tcCFoNajVTiHE  -r -s --use-issue-name
+
 lint:
   stage: test
   only:
