@@ -1,8 +1,5 @@
 image: node:latest
 
-include:
-  - template: Code-Quality.gitlab-ci.yml
-
 stages:
   - pre
   - test
@@ -42,8 +39,28 @@ create:merge-request:
   script:
     - gitlab_auto_mr -t master -c WIP -d .gitlab/merge_request_templates/merge_request.md --private-token DxTz9x6tcCFoNajVTiHE  -r -s --use-issue-name
 
-code_quality_html:
+lint:
   stage: test
-  extends: code_quality
-  variables:
-    CODE_QUALITY_IMAGE: "registry.example.com/codequality-fork:latest"
+  only:
+    - merge_requests
+  except:
+    variables:
+      - $CI_COMMIT_REF_NAME =~ /^master/
+  script:
+    - yarn lint
+tests:unit:
+  stage: test
+  only:
+    - merge_requests
+  except:
+    variables:
+      - $CI_COMMIT_REF_NAME =~ /^master/
+  script:
+    - yarn test --silent
+
+tests:coverage:
+  stage: test
+  only:
+    - master
+  script:
+    - yarn test --coverage --silent
