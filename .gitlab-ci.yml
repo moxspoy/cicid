@@ -1,5 +1,8 @@
 image: node:latest
 
+include:
+  - template: Code-Quality.gitlab-ci.yml
+
 stages:
   - pre
   - test
@@ -38,6 +41,13 @@ lint:
       - $CI_COMMIT_REF_NAME =~ /^master/
   script:
     - yarn lint
+
+code_quality:
+  variables:
+    REPORT_FORMAT: html
+  artifacts:
+    paths: [gl-code-quality-report.html]
+
 
 tests:unit:
   stage: test
