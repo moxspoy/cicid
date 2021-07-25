@@ -6,7 +6,6 @@ include:
 stages:
   - pre
   - test
-  - code_quality
 
 cache:
   key: ${CI_COMMIT_REF_SLUG}
@@ -71,7 +70,7 @@ tests:coverage:
     - yarn test --coverage --silent
 
 code_quality_html:
-  stage: code_quality
+  stage: test
   extends: code_quality
   variables:
     REPORT_FORMAT: html
