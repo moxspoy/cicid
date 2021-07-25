@@ -52,7 +52,6 @@ lint:
       - $CI_COMMIT_REF_NAME =~ /^master/
   script:
     - yarn lint
-    -
 tests:unit:
   stage: test
   only:
