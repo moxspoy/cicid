@@ -4,6 +4,7 @@ stages:
   - pre
   - lint
   - test
+  - build
 
 cache:
   key: ${CI_COMMIT_REF_SLUG}
@@ -57,3 +58,14 @@ tests:coverage:
   script:
     - yarn test --coverage --silent
 
+build:android:
+  stage: build
+  only:
+    - merge_requests
+  script:
+    - cd android && ./gradlew assembleDebug
+  when: manual
+  artifacts:
+    paths:
+      - ./android/app/build/
+      - ./android/app/src/main/assets/
