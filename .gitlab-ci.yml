@@ -1,7 +1,8 @@
-image: node:latest
+image: reactnativecommunity/react-native-android
 
 stages:
   - pre
+  - lint
   - test
 
 cache:
@@ -30,7 +31,7 @@ close:issue:
     - gitlab_auto_close_issue --issue $ISSUE --remove-label "Doing" --remove-label "To Do"
 
 lint:
-  stage: test
+  stage: lint
   only:
     - merge_requests
   except:
