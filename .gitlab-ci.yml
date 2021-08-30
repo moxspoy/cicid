@@ -33,8 +33,6 @@ close:issue:
 
 lint:
   stage: lint
-  only:
-    - merge_requests
   except:
     variables:
       - $CI_COMMIT_REF_NAME =~ /^master/
@@ -43,8 +41,6 @@ lint:
 
 tests:unit:
   stage: test
-  only:
-    - merge_requests
   except:
     variables:
       - $CI_COMMIT_REF_NAME =~ /^master/
@@ -62,6 +58,7 @@ build:android:
   stage: build
   only:
     - merge_requests
+    - android-build
   script:
     - cd android && ./gradlew assembleDebug
   when: manual
